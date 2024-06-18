@@ -40,6 +40,6 @@ class TestApplePackage(TestCase):
 
     def test_check_limit_with_500_apples(self):
         """Test the behavior with 500 apples."""
-        with patch("sys.stdout", new=StringIO()) as results:
+        with patch("sys.stdout", new=StringIO()):
             for _ in range(500):
                 ApplePackage()
