@@ -199,6 +199,6 @@ if __name__ == "__main__":
     interval1 = TimeInterval(hours=21, minutes=58, seconds=50)
     interval2 = TimeInterval(hours=1, minutes=45, seconds=22)
 
-    print(interval1 + interval2)  # Expected result: 23:44:12
-    print(interval1 - interval2)  # Expected result: 20:13:28
-    print(interval1 * 2)  # Expected result: 43:57:40
+    assert str(interval1 + interval2) == "23:44:12"
+    assert str(interval1 - interval2) == "20:13:28"
+    assert str(interval1 * 2) == "43:57:40"
