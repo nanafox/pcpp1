@@ -16,6 +16,16 @@ Scenario
       the time interval object;
     - check the argument type, and in case of a mismatch, raise a TypeError
       exception.
+
+Lab 2 - An improvement of existing solution
+
+Scenario
+
+    - Extend the class implementation prepared in the previous lab to support
+      the addition and subtraction of integers to time interval objects;
+    - to add an integer to a time interval object means to add seconds;
+    - to subtract an integer from a time interval object means to remove
+      seconds.
 """
 
 import operator
@@ -90,9 +100,10 @@ class TimeInterval:
             TimeInterval: The sum of the two TimeInterval objects.
 
         Raises:
-            TypeError: If the other argument is not of type TimeInterval.
+            TypeError: If the other argument is not of type TimeInterval or
+            int.
         """
-        self.check_type(arg=other, expected_type=TimeInterval)
+        self.check_type(arg=other, expected_type=Union[TimeInterval, int])
         return self.__perform_operation(other=other, operator=operator.add)
 
     def __sub__(self, other: "TimeInterval") -> "TimeInterval":
@@ -106,9 +117,10 @@ class TimeInterval:
             TimeInterval: The difference between the two TimeInterval objects.
 
         Raises:
-            TypeError: If the other argument is not of type TimeInterval.
+            TypeError: If the other argument is not of type TimeInterval or
+            int.
         """
-        self.check_type(arg=other, expected_type=TimeInterval)
+        self.check_type(arg=other, expected_type=Union[TimeInterval, int])
         return self.__perform_operation(other=other, operator=operator.sub)
 
     def __mul__(self, factor: int) -> "TimeInterval":
@@ -141,7 +153,8 @@ class TimeInterval:
             TimeInterval: The result of the operation.
 
         Raises:
-            TypeError: If the other argument is not of type int or TimeInterval.
+            TypeError: If the other argument is not of type int or
+            TimeInterval.
         """
         if isinstance(other, int):
             total_seconds = operator(self.__total_seconds(), other)
@@ -202,3 +215,5 @@ if __name__ == "__main__":
     assert str(interval1 + interval2) == "23:44:12"
     assert str(interval1 - interval2) == "20:13:28"
     assert str(interval1 * 2) == "43:57:40"
+    assert str(interval1 + 62) == "21:59:52"
+    assert str(interval1 - 62) == "21:57:48"
