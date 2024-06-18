@@ -131,7 +131,8 @@ class TimeInterval:
             factor (int): The factor to multiply by.
 
         Returns:
-            TimeInterval: The product of the TimeInterval object and the factor.
+            TimeInterval: The product of the TimeInterval object and the
+            factor.
 
         Raises:
             TypeError: If the factor argument is not of type int.
