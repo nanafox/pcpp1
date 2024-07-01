@@ -1,0 +1,37 @@
+This tests the Class and inheritance lab
+
+
+>>> from advanced_oop.oop_advanced.labs.lab_classes_and_inheritance \
+... import MFD_SPF, MFD_SFP
+
+First, let's test the Scanner, Fax, and Printer inheritance order class
+
+------------------------------------------------------------------------------
+
+>>> sfp = MFD_SFP()
+>>> sfp.scan()
+scan() method from Scanner class
+
+>>> sfp.print()
+print() method from Fax class
+
+>>> sfp.send()
+send() method from Fax class
+
+------------------------------------------------------------------------------
+
+Now for the Scanner, Printer, and Fax inheritance order class
+
+------------------------------------------------------------------------------
+
+>>> spf = MFD_SPF()
+>>> spf.scan()
+scan() method from Scanner class
+
+>>> spf.print()
+print() method from Printer class
+
+>>> spf.send()
+send() method from Fax class
+
+------------------------------------------------------------------------------
