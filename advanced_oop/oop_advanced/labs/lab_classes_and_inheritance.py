@@ -46,22 +46,24 @@ class Fax:
 
 
 class MFD_SPF(Scanner, Printer, Fax):
-    """A simple class to illustrate inheritance
+    """A simple class to illustrate inheritance.
 
-    It inherits from the Scanner class, then the Printer class, then the Fax
-    class.
-    This order is important as it affects the MRO (Method Resolution Order)
+    It inherits from the Scanner class, then the Printer class, then the
+    Fax class. This order is important as it affects the MRO (Method
+    Resolution Order)
     """
+
     pass
 
 
 class MFD_SFP(Scanner, Fax, Printer):
-    """A simple class to illustrate inheritance
+    """A simple class to illustrate inheritance.
 
-    It inherits from the Scanner class, then the Fax class, then the Printer
-    class. By so doing, the MRO is affected when calling methods that appear
-    in two different methods.
+    It inherits from the Scanner class, then the Fax class, then the
+    Printer class. By so doing, the MRO is affected when calling methods
+    that appear in two different methods.
     """
+
     pass
 
 

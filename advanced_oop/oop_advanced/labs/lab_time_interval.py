@@ -33,8 +33,7 @@ from typing import Union
 
 
 class TimeData:
-    """
-    Represents a class for storing time data.
+    """Represents a class for storing time data.
 
     Attributes:
         seconds_in_hour (int): The number of seconds in an hour.
@@ -46,15 +45,12 @@ class TimeData:
 
 
 class TimeInterval:
-    """
-    Represents a time interval in hours, minutes, and seconds.
-    """
+    """Represents a time interval in hours, minutes, and seconds."""
 
     __slots__ = ["hours", "minutes", "seconds"]
 
     def __init__(self, *, hours: int, minutes: int, seconds: int) -> None:
-        """
-        Initializes a TimeInterval object.
+        """Initializes a TimeInterval object.
 
         Args:
             hours (int): The number of hours.
@@ -73,8 +69,7 @@ class TimeInterval:
 
     @staticmethod
     def check_type(*, arg, expected_type):
-        """
-        Checks if the given argument is of the expected type.
+        """Checks if the given argument is of the expected type.
 
         Args:
             arg: The argument to check.
@@ -90,8 +85,7 @@ class TimeInterval:
             )
 
     def __add__(self, other: "TimeInterval") -> "TimeInterval":
-        """
-        Adds two TimeInterval objects together.
+        """Adds two TimeInterval objects together.
 
         Args:
             other (TimeInterval): The TimeInterval object to add.
@@ -107,8 +101,7 @@ class TimeInterval:
         return self.__perform_operation(other=other, operator=operator.add)
 
     def __sub__(self, other: "TimeInterval") -> "TimeInterval":
-        """
-        Subtracts one TimeInterval object from another.
+        """Subtracts one TimeInterval object from another.
 
         Args:
             other (TimeInterval): The TimeInterval object to subtract.
@@ -124,8 +117,7 @@ class TimeInterval:
         return self.__perform_operation(other=other, operator=operator.sub)
 
     def __mul__(self, factor: int) -> "TimeInterval":
-        """
-        Multiplies a TimeInterval object by a factor.
+        """Multiplies a TimeInterval object by a factor.
 
         Args:
             factor (int): The factor to multiply by.
@@ -143,8 +135,7 @@ class TimeInterval:
     def __perform_operation(
         self, *, other: Union[int, "TimeInterval"], operator: operator
     ) -> "TimeInterval":
-        """
-        Performs the specified operation on the TimeInterval object.
+        """Performs the specified operation on the TimeInterval object.
 
         Args:
             other (int or TimeInterval): The other operand for the operation.
@@ -169,8 +160,7 @@ class TimeInterval:
         return TimeInterval(hours=hours, minutes=minutes, seconds=seconds)
 
     def __total_seconds(self) -> int:
-        """
-        Calculates the total number of seconds in the TimeInterval object.
+        """Calculates the total number of seconds in the TimeInterval object.
 
         Returns:
             int: The total number of seconds.
@@ -182,8 +172,7 @@ class TimeInterval:
         )
 
     def __str__(self) -> str:
-        """
-        Returns a string representation of the TimeInterval object.
+        """Returns a string representation of the TimeInterval object.
 
         Returns:
             str: The string representation of the TimeInterval object.
@@ -192,8 +181,7 @@ class TimeInterval:
 
     @staticmethod
     def __convert_seconds_to_hms(*, total_seconds: int) -> tuple:
-        """
-        Converts the total number of seconds to hours, minutes, and seconds.
+        """Converts the total number of seconds to hours, minutes, and seconds.
 
         Args:
             total_seconds (int): The total number of seconds.
